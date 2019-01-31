@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Menu from './menu'
-import Pokemon from './pokemon'
+import { Picture, Stats } from './pokemon'
 
 class Pokedex extends Component {
     constructor () {
         super()
         this.state = {
             pokemonId: 25,
-            data: {
-                image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+            url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+            description: {
                 name: 'pikachu',
                 types: 'electric',
                 height: '4',
@@ -31,23 +30,21 @@ class Pokedex extends Component {
     drawPokemon = () => {
         this.setState({
             pokemonId: this.getPokemonId(1, 802)
-        })
-        console.log(this.state.pokemonId)
+        }, this.setPokemon())
     }
 
     drawPikachu = () => {
         this.setState({
             pokemonId: 25
-        })
-        console.log(this.state.pokemonId)
+        }, this.setPokemon())
     }
 
     setPokemon = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.state.pokemonId}`)
             .then(response => {
                 this.setState({
-                    data: {
-                        image: response.data.sprites.front_default,
+                    url: response.data.sprites.front_default,
+                    description: {
                         name: response.data.name,
                         types: this.handleTypes(response.data.types),
                         height: response.data.height,
@@ -61,15 +58,18 @@ class Pokedex extends Component {
     render() {
         return (
             <main>
-                <Menu
-                    drawPikachu={this.drawPikachu}
-                    drawPokemon={this.drawPokemon}
-                    setPokemon={this.setPokemon}
-                />
-                <Pokemon resource={this.state.data}/>
+            <button onClick={this.drawPokemon}>
+                Mudar Pokemon
+            </button>
+                <Picture
+                    url={this.state.url}
+                    description={this.state.description.name} />
+                <Stats
+                    data={this.state.description}/>
             </main>
         )
     }
+
 }
 
 export default Pokedex

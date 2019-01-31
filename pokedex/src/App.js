@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import Pokedex from './components/pokedex'
+import './App.css'
+import PokedexUI from './components/pokedexUI';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <Pokedex />
+        <PokedexUI />
       </div>
     )
   }

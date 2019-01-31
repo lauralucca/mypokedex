@@ -1,17 +1,30 @@
 import React, { Component } from 'react'
         
-class Pokemon extends Component {
+export class Picture extends Component {
     render() {
         return (
-            <article>
-                <img alt={this.props.resource.name} src={this.props.resource.image} />
-                <p>Name: {this.props.resource.name}</p>
-                <p>Type: {this.props.resource.types}</p>
-                <p>Height: {this.props.resource.height}'</p>
-                <p>Weight: {this.props.resource.weight} lbs.</p>
-            </article>
+            <figure>
+                <img
+                    alt={this.props.description}
+                    src={this.props.url} />
+            </figure>
         )
     }
 }
 
-export default Pokemon
+export class Stats extends Component {
+    render() {
+        return (
+            <dl>
+                <dt>Name:</dt>
+                <dd>{this.props.data.name}</dd>
+                <dt>Type:</dt>
+                <dd>{this.props.data.types}</dd>
+                <dt>Height:</dt>
+                <dd>{this.props.data.height}'</dd>
+                <dt>Weight:</dt>
+                <dd>{this.props.data.weight} lbs.</dd>
+            </dl>
+        )
+    }
+}
