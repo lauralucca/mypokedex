@@ -1,3 +1,19 @@
+# Objetivo
+Este projeto foi criado para a apresentação #3 de Front-ends na everis "React - Aprenda do Zero" e consiste de um worshop incluindo a prática do desenvolvimento da seguinte aplicação:
+
+![preview](https://github.com/lauralucca/mypokedex/blob/master/print.png)
+
+Para mais informações, a apresentação pode ser encontrada [neste link](https://docs.google.com/presentation/d/1wlAh3_Udp1MgYlRT5C-L_HyzETs8YPJxi9m5oS1kWIg/edit?usp=sharing).
+
+# Passo a Passo (exercício prático)
+
+1. Criação da APP com **create-react-app**;
+2. Subtituir a página criada automáticamente por um "Hello, World!";
+3. Criar um arquivo **'pokemon.js'** com os componentes *Stateless* **Picture** e **Description**;
+4. Importar os componentes dentro de **app.js** e passar os parâmetros por meio de *Props*;
+5. Criar o componente *Stateful* **Pokedex** com os métodos necessários para a requisição, atualização e renderização dos componentes filhos;
+6. Adicionar os estilos e componentes visuais fornecidos durante o treinamento.
+
 # Conceitos
 
 ### Framework vs. Biblioteca
@@ -117,19 +133,3 @@ Componentes criados como Classes permitem o uso de todos os métodos do ciclo de
 Componentes funcionais são basicamente funções em javascript, que aceitam Props e retornam elementos do React. Sendo assim, estes componentes são muito menores e mais fáceis de ler e testar. Outra vantagem é a facilidade de separar as responsabilidades de cada componente. Utilizando as boas práticas da programação funcional, seu código fica muito mais limpo e organizado, separando containers e componentes visuais com facilidade.
 
 Além disso, os desenvolvedores do React já declararam a intenção de implementar melhoras de performance para componentes funcionais em futuras versões.
-
-
-
-# Passo a Passo (exercício prático)
-
--Criação da APP com create-react-app
--Subtituir a página criada automáticamente por um "Hello, World!"
--Criar um arquivo 'pokemon.js' com os componentes Picture e Description
-
-Criar componente simples stateless Message
-Importar dentro de app.js
-Passar a mensagem como props
-
-Criar um componente com state
-* aberto e fechado
-* ativo e inativo
